@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/homepage_title" />
+
+    <item
+        android:id="@+id/likesFragment"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="@string/likes_page_title" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/user_page_title" />
+
+</menu>
