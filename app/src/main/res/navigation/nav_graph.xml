@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.eap.snackapp.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addSnackFragment"
+            app:destination="@id/addSnackFragment" />
+    </fragment>
     <fragment
         android:id="@+id/likesFragment"
         android:name="com.eap.snackapp.LikesFragment"
@@ -20,5 +24,10 @@
         android:name="com.eap.snackapp.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/addSnackFragment"
+        android:name="com.eap.snackapp.AddSnackFragment"
+        android:label="AddSnackFragment"
+        tools:layout="@layout/fragment_add_snack" />
 
 </navigation>

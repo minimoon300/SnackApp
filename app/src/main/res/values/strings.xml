@@ -6,4 +6,24 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search_a_snack">Search a snack</string>
+    <string name="add_a_snack">Add a snack</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="form_field_snack_name">Snack Name</string>
+    <string name="snack_location">Snack Location(s):</string>
+    <string name="africa">Africa</string>
+    <string name="asia">Asia</string>
+    <string name="australia">Australia</string>
+    <string name="europe">Europe</string>
+    <string name="north_america">North America</string>
+    <string name="south_america">South America</string>
+    <string name="form_field_snack_weight">Snack Weight(in g)</string>
+    <string name="form_field_snack_cals">Snack Calories(for 100g)</string>
+    <string name="form_field_snack_joules">Snack Kilojoules(for 100g)</string>
+    <string name="snack_ingredients">Snack Ingredients:</string>
+    <string name="cacao">Cacao</string>
+    <string name="salt">Salt</string>
+    <string name="sugar">Sugar</string>
+    <string name="Image">Snack Image</string>
+    <string name="snack_image">Snack Image</string>
 </resources>
