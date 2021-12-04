@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "245616456931",
+    "project_id": "snackvice",
+    "storage_bucket": "snackvice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245616456931:android:d023e9caab8cf3b38581d6",
+        "android_client_info": {
+          "package_name": "com.eap.snackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245616456931-733jc0th6k3pqkvo3vsouoptdurcanrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBbENM-ya5dMeJVOKkIQuG7gLNtmaMNZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245616456931-733jc0th6k3pqkvo3vsouoptdurcanrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -93,7 +93,8 @@
                 android:id="@+id/add_et_snack_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:inputType="number"
+                android:text="0" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,7 +116,8 @@
                 android:id="@+id/add_et_snack_cals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:inputType="number"
+                android:text="0" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,7 +137,8 @@
                 android:id="@+id/add_et_snack_joules"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:inputType="number"
+                android:text="0" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -149,7 +152,7 @@
             app:layout_constraintTop_toBottomOf="@id/add_layout_snack_name" />
 
         <CheckBox
-            android:id="@+id/location_africa"
+            android:id="@+id/add_location_africa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
@@ -157,7 +160,7 @@
             android:text="@string/africa" />
 
         <CheckBox
-            android:id="@+id/location_asia"
+            android:id="@+id/add_location_asia"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
@@ -165,7 +168,7 @@
             android:text="@string/asia" />
 
         <CheckBox
-            android:id="@+id/location_australia"
+            android:id="@+id/add_location_australia"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
@@ -173,7 +176,7 @@
             android:text="@string/australia" />
 
         <CheckBox
-            android:id="@+id/location_europe"
+            android:id="@+id/add_location_europe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
@@ -181,7 +184,7 @@
             android:text="@string/europe" />
 
         <CheckBox
-            android:id="@+id/location_north_america"
+            android:id="@+id/add_location_north_america"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
@@ -189,7 +192,7 @@
             android:text="@string/north_america" />
 
         <CheckBox
-            android:id="@+id/location_south_america"
+            android:id="@+id/add_location_south_america"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
@@ -206,29 +209,68 @@
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/add_layout_snack_name" />
 
-        <CheckBox
-            android:id="@+id/ingredient_cacao"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_layout_ingredient_cacao"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:buttonTint="@color/black"
-            android:text="@string/cacao" />
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/cacao"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_app_bar"
+            app:suffixText="g">
 
-        <CheckBox
-            android:id="@+id/ingredient_salt"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:buttonTint="@color/black"
-            android:text="@string/salt" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_et_ingredient_cacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="0" />
 
-        <CheckBox
-            android:id="@+id/ingredient_sugar"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_layout_ingredient_salt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:buttonTint="@color/black"
-            android:text="@string/sugar" />
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/salt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_app_bar"
+            app:suffixText="g">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_et_ingredient_salt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="0" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_layout_ingredient_sugar"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/sugar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_app_bar"
+            app:suffixText="g">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_et_ingredient_sugar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="0" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/add_btn"

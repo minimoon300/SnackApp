@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SnackApp</string>
+    <string name="app_name">SnackVice</string>
     <string name="homepage_title">Home</string>
     <string name="user_page_title">Profile</string>
     <string name="likes_page_title">Likes</string>
@@ -26,4 +26,21 @@
     <string name="sugar">Sugar</string>
     <string name="Image">Snack Image</string>
     <string name="snack_image">Snack Image</string>
+    <string name="loading">Loading…</string>
+    <string name="snack_added">The snack has been added</string>
+    <string name="ok">OK</string>
+    <string name="create_account">Create an account</string>
+    <string name="form_field_username">Username</string>
+    <string name="form_field_email">Email</string>
+    <string name="form_field_password">Password</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_password">Forgot your password ?</string>
+    <string name="email_already_used_message">This email is already taken.</string>
+    <string name="field_empty_error">Please fill in this field.</string>
+    <string name="field_email_error">Please enter a valid email address.</string>
+    <string name="field_password_error">Please enter a password of at least 8 characters.</string>
+    <string name="sign_out">Sign out</string>
+    <string name="sign_in_error_incorrect_login">Email or password incorrect</string>
+
 </resources>

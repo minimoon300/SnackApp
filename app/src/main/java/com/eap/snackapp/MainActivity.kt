@@ -10,12 +10,40 @@ import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.NonCancellable.cancel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), IMainActivity {
+
+    override fun navigate(fragment: Int) {
+        navController.navigate(fragment)
+    }
+
+    override fun goBack() {
+        onBackPressed()
+    }
+
+    override fun setMainSnackbar(message: String, duration: Int) {
+        mainSnackbar = Snackbar
+            .make(main_activity_coordinator, message, duration)
+        mainSnackbar!!.show()
+    }
+
+    override fun setMainSnackbar(
+        message: String,
+        duration: Int,
+        actionMessage: String,
+        action: (v: View) -> Unit
+    ) {
+        mainSnackbar = Snackbar
+            .make(main_activity_coordinator, message, duration)
+            .setAction(actionMessage, action)
+        mainSnackbar!!.show()
+    }
 
     private lateinit var navController: NavController
+    private var mainSnackbar: Snackbar? = null
 
     lateinit var imageView: ImageView
     private var imageUri: Uri? = null
@@ -38,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.addSnackFragment -> bottom_nav.visibility = View.GONE
+                R.id.signInFragment, R.id.addSnackFragment -> bottom_nav.visibility = View.GONE
                 R.id.homeFragment, R.id.likesFragment -> bottom_nav.visibility = View.VISIBLE
             }
         }
@@ -47,8 +75,8 @@ class MainActivity : AppCompatActivity() {
     private fun setFloatingActionButon() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.profileFragment, R.id.addSnackFragment -> main_activity_fab.hide()
-                R.id.homeFragment, R.id.likesFragment -> main_activity_fab.show()
+                R.id.signInFragment, R.id.signUpFragment, R.id.likesFragment, R.id.profileFragment, R.id.addSnackFragment -> main_activity_fab.hide()
+                R.id.homeFragment -> main_activity_fab.show()
             }
             main_activity_fab.setOnClickListener {
                 navController.navigate(R.id.addSnackFragment)
