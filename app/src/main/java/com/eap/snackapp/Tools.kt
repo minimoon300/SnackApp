@@ -7,12 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
+import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 class Tools {
     companion object {
         private lateinit var loadingDialog: AlertDialog
         lateinit var username: String
+        var likes = mutableListOf<String>()
+        var dislikes = mutableListOf<String>()
+        var currentSnack: Snack? = null
 
         // Show a loading Dialog
         fun showLoadingDialog(context: Context) {
@@ -64,6 +68,14 @@ class Tools {
             }
             layout.error = null
             return true
+        }
+
+        fun TextInputEditText.setUneditableField(info: String) {
+            setText(info)
+            setOnFocusChangeListener { v, hasFocus ->
+                if (hasFocus)
+                    v.clearFocus()
+            }
         }
 
     }

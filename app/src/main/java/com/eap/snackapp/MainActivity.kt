@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity(), IMainActivity {
         navController.navigate(fragment)
     }
 
+    override fun navigate(fragment: Int, arguments: Bundle) {
+        navController.navigate(fragment, arguments)
+    }
+
     override fun goBack() {
         onBackPressed()
     }
@@ -28,6 +33,14 @@ class MainActivity : AppCompatActivity(), IMainActivity {
         mainSnackbar = Snackbar
             .make(main_activity_coordinator, message, duration)
         mainSnackbar!!.show()
+    }
+
+    override fun showMainFAB() {
+        main_activity_fab.show()
+    }
+
+    override fun hideMainFAB() {
+        main_activity_fab.hide()
     }
 
     override fun setMainSnackbar(
@@ -58,6 +71,7 @@ class MainActivity : AppCompatActivity(), IMainActivity {
 
         setBottomNavigation()
         setFloatingActionButon()
+        setSoftInputMode()
     }
 
     private fun setBottomNavigation() {
@@ -66,7 +80,8 @@ class MainActivity : AppCompatActivity(), IMainActivity {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.signInFragment, R.id.addSnackFragment -> bottom_nav.visibility = View.GONE
+                R.id.signInFragment, R.id.addSnackFragment, R.id.snackInfoFragment -> bottom_nav.visibility =
+                    View.GONE
                 R.id.homeFragment, R.id.likesFragment -> bottom_nav.visibility = View.VISIBLE
             }
         }
@@ -75,15 +90,25 @@ class MainActivity : AppCompatActivity(), IMainActivity {
     private fun setFloatingActionButon() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.signInFragment, R.id.signUpFragment, R.id.likesFragment, R.id.profileFragment, R.id.addSnackFragment -> main_activity_fab.hide()
+                R.id.signInFragment, R.id.signUpFragment, R.id.likesFragment, R.id.profileFragment, R.id.addSnackFragment, R.id.snackInfoFragment -> main_activity_fab.hide()
                 R.id.homeFragment -> main_activity_fab.show()
             }
             main_activity_fab.setOnClickListener {
                 navController.navigate(R.id.addSnackFragment)
-
             }
         }
 
+    }
+
+    private fun setSoftInputMode() {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.signInFragment -> window.setSoftInputMode(
+                    WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+                )
+                R.id.homeFragment -> window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING)
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -13,12 +13,19 @@
         <action
             android:id="@+id/action_homeFragment_to_addSnackFragment"
             app:destination="@id/addSnackFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_snackInfoFragment"
+            app:destination="@id/snackInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/likesFragment"
         android:name="com.eap.snackapp.LikesFragment"
         android:label="LikesFragment"
-        tools:layout="@layout/fragment_likes" />
+        tools:layout="@layout/fragment_likes" >
+        <action
+            android:id="@+id/action_likesFragment_to_snackInfoFragment"
+            app:destination="@id/snackInfoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.eap.snackapp.ProfileFragment"
@@ -54,5 +61,10 @@
             android:id="@+id/action_signUpFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/snackInfoFragment"
+        android:name="com.eap.snackapp.SnackInfoFragment"
+        android:label="SnackInfoFragment"
+        tools:layout="@layout/fragment_snack_info"/>
 
 </navigation>

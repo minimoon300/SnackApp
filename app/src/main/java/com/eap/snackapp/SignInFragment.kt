@@ -51,6 +51,7 @@ class SignInFragment : Fragment() {
                         if (task.isSuccessful) {
                             Log.d(TAG, "signInWithEmail:success")
                             mainActivityListener.navigate(R.id.action_signInFragment_to_homeFragment)
+                            showLoadingDialog(requireContext())
                         } else {
                             Log.w(TAG, "signInWithEmail:failure", task.exception)
                             Toast.makeText(
@@ -95,6 +96,7 @@ class SignInFragment : Fragment() {
     private fun checkAlreadySignIn() {
         Firebase.auth.currentUser?.let {
             mainActivityListener.navigate(R.id.homeFragment)
+            showLoadingDialog(requireContext())
         }
     }
 

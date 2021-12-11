@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/add_app_bar"
+            android:id="@+id/info_app_bar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/white"
@@ -23,66 +23,33 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/info_snack_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/add_a_snack"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Twix" />
 
             </com.google.android.material.appbar.MaterialToolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_snack_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:hint="@string/form_field_snack_name"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_app_bar">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_snack_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
         <ImageView
-            android:id="@+id/add_snack_img"
+            android:id="@+id/info_snack_img"
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:visibility="gone" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/snack_img_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/snack_image"
-            android:textAllCaps="false" />
+            android:layout_margin="32dp"
+            tools:src="@drawable/googleg_disabled_color_18" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_snack_weight"
+            android:id="@+id/info_layout_snack_weight"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:hint="@string/form_field_snack_weight"
             app:errorEnabled="true"
@@ -91,7 +58,7 @@
             app:layout_constraintTop_toBottomOf="@+id/add_app_bar">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_snack_weight"
+                android:id="@+id/info_et_snack_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -100,7 +67,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_snack_cals"
+            android:id="@+id/info_layout_snack_cals"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -114,7 +81,7 @@
             app:layout_constraintTop_toBottomOf="@+id/add_app_bar">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_snack_cals"
+                android:id="@+id/info_et_snack_cals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -123,7 +90,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_snack_joules"
+            android:id="@+id/info_layout_snack_joules"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -135,7 +102,7 @@
             app:layout_constraintTop_toBottomOf="@+id/add_app_bar">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_snack_joules"
+                android:id="@+id/info_et_snack_joules"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -153,52 +120,58 @@
             app:layout_constraintTop_toBottomOf="@id/add_layout_snack_name" />
 
         <CheckBox
-            android:id="@+id/add_location_africa"
+            android:id="@+id/info_location_africa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:buttonTint="@color/black"
+            android:clickable="false"
             android:text="@string/africa" />
 
         <CheckBox
-            android:id="@+id/add_location_asia"
+            android:id="@+id/info_location_asia"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:buttonTint="@color/black"
+            android:clickable="false"
             android:text="@string/asia" />
 
         <CheckBox
-            android:id="@+id/add_location_australia"
+            android:id="@+id/info_location_australia"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:buttonTint="@color/black"
+            android:clickable="false"
             android:text="@string/australia" />
 
         <CheckBox
-            android:id="@+id/add_location_europe"
+            android:id="@+id/info_location_europe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:buttonTint="@color/black"
+            android:clickable="false"
             android:text="@string/europe" />
 
         <CheckBox
-            android:id="@+id/add_location_north_america"
+            android:id="@+id/info_location_north_america"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:buttonTint="@color/black"
+            android:clickable="false"
             android:text="@string/north_america" />
 
         <CheckBox
-            android:id="@+id/add_location_south_america"
+            android:id="@+id/info_location_south_america"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
             android:buttonTint="@color/black"
+            android:clickable="false"
             android:text="@string/south_america" />
 
         <TextView
@@ -211,7 +184,7 @@
             app:layout_constraintTop_toBottomOf="@id/add_layout_snack_name" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_salt"
+            android:id="@+id/info_layout_ingredient_salt"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -223,7 +196,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_salt"
+                android:id="@+id/info_et_ingredient_salt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -232,7 +205,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_sugar"
+            android:id="@+id/info_layout_ingredient_sugar"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -244,7 +217,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_sugar"
+                android:id="@+id/info_et_ingredient_sugar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -253,7 +226,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_water"
+            android:id="@+id/info_layout_ingredient_water"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -265,7 +238,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_water"
+                android:id="@+id/info_et_ingredient_water"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -274,7 +247,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_oil_and_fat"
+            android:id="@+id/info_layout_ingredient_oil_and_fat"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -286,7 +259,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_oil_and_fat"
+                android:id="@+id/info_et_ingredient_oil_and_fat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -295,7 +268,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_flavouring"
+            android:id="@+id/info_layout_ingredient_flavouring"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -307,7 +280,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_flavouring"
+                android:id="@+id/info_et_ingredient_flavouring"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -316,7 +289,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_dairy"
+            android:id="@+id/info_layout_ingredient_dairy"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -328,7 +301,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_dairy"
+                android:id="@+id/info_et_ingredient_dairy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -337,7 +310,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_vegetable_oil_and_fat"
+            android:id="@+id/info_layout_ingredient_vegetable_oil_and_fat"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -349,7 +322,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_vegetable_oil_and_fat"
+                android:id="@+id/info_et_ingredient_vegetable_oil_and_fat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -358,7 +331,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_cereal"
+            android:id="@+id/info_layout_ingredient_cereal"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -370,7 +343,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_cereal"
+                android:id="@+id/info_et_ingredient_cereal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -379,7 +352,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_vegetable"
+            android:id="@+id/info_layout_ingredient_vegetable"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -391,7 +364,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_vegetable"
+                android:id="@+id/info_et_ingredient_vegetable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -400,7 +373,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_fruit"
+            android:id="@+id/info_layout_ingredient_fruit"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -412,7 +385,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_fruit"
+                android:id="@+id/info_et_ingredient_fruit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -421,7 +394,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_flour"
+            android:id="@+id/info_layout_ingredient_flour"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -433,7 +406,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_flour"
+                android:id="@+id/info_et_ingredient_flour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -442,7 +415,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_wheat"
+            android:id="@+id/info_layout_ingredient_wheat"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -454,7 +427,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_wheat"
+                android:id="@+id/info_et_ingredient_wheat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -463,7 +436,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_root_vegetable"
+            android:id="@+id/info_layout_ingredient_root_vegetable"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -475,7 +448,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_root_vegetable"
+                android:id="@+id/info_et_ingredient_root_vegetable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -484,7 +457,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_vegetable_oil"
+            android:id="@+id/info_layout_ingredient_vegetable_oil"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -496,7 +469,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_vegetable_oil"
+                android:id="@+id/info_et_ingredient_vegetable_oil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -505,7 +478,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_glucose"
+            android:id="@+id/info_layout_ingredient_glucose"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -517,7 +490,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_glucose"
+                android:id="@+id/info_et_ingredient_glucose"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -526,7 +499,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_starch"
+            android:id="@+id/info_layout_ingredient_starch"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -538,7 +511,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_starch"
+                android:id="@+id/info_et_ingredient_starch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -547,7 +520,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_milk"
+            android:id="@+id/info_layout_ingredient_milk"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -559,7 +532,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_milk"
+                android:id="@+id/info_et_ingredient_milk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -568,7 +541,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_natural_flavouring"
+            android:id="@+id/info_layout_ingredient_natural_flavouring"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -580,7 +553,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_natural_flavouring"
+                android:id="@+id/info_et_ingredient_natural_flavouring"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -589,7 +562,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_cereal_flour"
+            android:id="@+id/info_layout_ingredient_cereal_flour"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -601,7 +574,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_cereal_flour"
+                android:id="@+id/info_et_ingredient_cereal_flour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -610,7 +583,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_layout_ingredient_spice"
+            android:id="@+id/info_layout_ingredient_spice"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -622,7 +595,7 @@
             app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_et_ingredient_spice"
+                android:id="@+id/info_et_ingredient_spice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -630,16 +603,30 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/add_btn"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/add"
-            android:textAllCaps="false" />
+            android:layout_margin="32dp">
+
+            <ImageView
+                android:id="@+id/info_thumb_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_thumb_up_48"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/info_thumb_down"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/info_thumb_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_thumb_down_48"
+                app:layout_constraintLeft_toRightOf="@id/info_thumb_up"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

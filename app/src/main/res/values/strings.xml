@@ -42,5 +42,23 @@
     <string name="field_password_error">Please enter a password of at least 8 characters.</string>
     <string name="sign_out">Sign out</string>
     <string name="sign_in_error_incorrect_login">Email or password incorrect</string>
+    <string name="water">Water</string>
+    <string name="oil_and_fat">Oil and fat</string>
+    <string name="flavouring">Flavouring</string>
+    <string name="dairy">Dairy</string>
+    <string name="vegetable_oil_and_fat">Vegetable oil and fat</string>
+    <string name="cereal">Cereal</string>
+    <string name="vegetable">Vegetable</string>
+    <string name="fruit">Fruit</string>
+    <string name="flour">Flour</string>
+    <string name="wheat">Wheat</string>
+    <string name="root_vegetable">Root vegetable</string>
+    <string name="vegetable_oil">Vegetable oil</string>
+    <string name="glucose">Glucose</string>
+    <string name="starch">Starch</string>
+    <string name="milk">Milk</string>
+    <string name="natural_flavouring">Natural flavouring</string>
+    <string name="cereal_flour">Cereal flour</string>
+    <string name="spice">Spice</string>
 
 </resources>

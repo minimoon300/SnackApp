@@ -21,6 +21,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.fragment_add_snack.*
+import java.util.*
+import kotlin.collections.HashMap
 
 
 class AddSnackFragment : Fragment() {
@@ -75,6 +77,9 @@ class AddSnackFragment : Fragment() {
                                     "INGREDIENTS" to getSnackIngredients(),
                                     "SEARCH_KEYWORDS" to generateSearchKeywords(
                                         add_et_snack_name.text.toString().trim().ifEmpty { "NAME" }
+                                            .toLowerCase(
+                                                Locale.FRANCE
+                                            )
                                     )
                                 )
                             )
@@ -113,15 +118,66 @@ class AddSnackFragment : Fragment() {
         val ingredients = HashMap<String, Int>()
 
         when {
-            add_et_ingredient_cacao.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["CACAO"] =
-                add_et_ingredient_cacao.text.toString().toInt()
             add_et_ingredient_salt.text.toString().trim()
                 .ifEmpty { "0" } != "0" -> ingredients["SALT"] =
                 add_et_ingredient_salt.text.toString().toInt()
             add_et_ingredient_sugar.text.toString().trim()
                 .ifEmpty { "0" } != "0" -> ingredients["SUGAR"] =
                 add_et_ingredient_sugar.text.toString().toInt()
+            add_et_ingredient_water.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["WATER"] =
+                add_et_ingredient_water.text.toString().toInt()
+            add_et_ingredient_oil_and_fat.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["OIL AND FAT"] =
+                add_et_ingredient_oil_and_fat.text.toString().toInt()
+            add_et_ingredient_flavouring.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["FLAVOURING"] =
+                add_et_ingredient_flavouring.text.toString().toInt()
+            add_et_ingredient_dairy.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["DAIRY"] =
+                add_et_ingredient_dairy.text.toString().toInt()
+            add_et_ingredient_vegetable_oil_and_fat.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["VEGETABLE OIL AND FAT"] =
+                add_et_ingredient_vegetable_oil_and_fat.text.toString().toInt()
+            add_et_ingredient_cereal.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["CEREAL"] =
+                add_et_ingredient_cereal.text.toString().toInt()
+            add_et_ingredient_vegetable.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["VEGETABLE"] =
+                add_et_ingredient_vegetable.text.toString().toInt()
+            add_et_ingredient_fruit.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["FRUIT"] =
+                add_et_ingredient_fruit.text.toString().toInt()
+            add_et_ingredient_flour.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["FLOUR"] =
+                add_et_ingredient_flour.text.toString().toInt()
+            add_et_ingredient_wheat.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["WHEAT"] =
+                add_et_ingredient_wheat.text.toString().toInt()
+            add_et_ingredient_root_vegetable.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["ROOT VEGETABLE"] =
+                add_et_ingredient_root_vegetable.text.toString().toInt()
+            add_et_ingredient_vegetable_oil.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["VEGETABLE OIL"] =
+                add_et_ingredient_vegetable_oil.text.toString().toInt()
+            add_et_ingredient_glucose.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["GLUCOSE"] =
+                add_et_ingredient_glucose.text.toString().toInt()
+            add_et_ingredient_starch.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["STARCH"] =
+                add_et_ingredient_starch.text.toString().toInt()
+            add_et_ingredient_milk.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["MILK"] =
+                add_et_ingredient_milk.text.toString().toInt()
+            add_et_ingredient_natural_flavouring.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["NATURAL FLAVOURING"] =
+                add_et_ingredient_natural_flavouring.text.toString().toInt()
+            add_et_ingredient_cereal_flour.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["CEREAL FLOUR"] =
+                add_et_ingredient_cereal_flour.text.toString().toInt()
+            add_et_ingredient_spice.text.toString().trim()
+                .ifEmpty { "0" } != "0" -> ingredients["SPICE"] =
+                add_et_ingredient_spice.text.toString().toInt()
         }
 
         return ingredients
@@ -131,8 +187,8 @@ class AddSnackFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == AppCompatActivity.RESULT_OK && requestCode == 100) {
             imageUri = data?.data
-            snack_img.setImageURI(imageUri)
-            snack_img.visibility = View.VISIBLE
+            add_snack_img.setImageURI(imageUri)
+            add_snack_img.visibility = View.VISIBLE
         }
     }
 
