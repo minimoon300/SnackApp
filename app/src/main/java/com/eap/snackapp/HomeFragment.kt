@@ -1,7 +1,10 @@
 package com.eap.snackapp
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +18,7 @@ import com.eap.snackapp.Tools.Companion.dislikes
 import com.eap.snackapp.Tools.Companion.dismissLoadingDialog
 import com.eap.snackapp.Tools.Companion.likes
 import com.eap.snackapp.Tools.Companion.username
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -28,6 +32,13 @@ class HomeFragment : Fragment(), IHomeFragment {
     private lateinit var mainActivityListener: IMainActivity
     private var originalSnacksList = mutableListOf<Snack>()
     private var snacksList = mutableListOf<Snack>()
+    private var sortedSnacksList = mutableListOf<Snack>()
+    private var fromAfrica = false
+    private var fromAsia = false
+    private var fromAustralia = false
+    private var fromEurope = false
+    private var fromNorthAmerica = false
+    private var fromSouthAmerica = false
 
     override fun navigate(fragment: Int) {
         mainActivityListener.navigate(fragment)
@@ -61,6 +72,7 @@ class HomeFragment : Fragment(), IHomeFragment {
                         snacksList.addAll(originalSnacksList)
                         setSnacksRecycler()
                         setSearch()
+                        setHomeSortListener()
                     }
                 dismissLoadingDialog()
             }
@@ -96,8 +108,11 @@ class HomeFragment : Fragment(), IHomeFragment {
                 snack_recycler.adapter?.notifyItemRangeRemoved(0, size)
 
                 snacksList = originalSnacksList.filter {
-                    it.SEARCH_KEYWORDS!!.contains(home_et_search.text.toString().toLowerCase(Locale.FRANCE))
+                    it.SEARCH_KEYWORDS!!.contains(
+                        home_et_search.text.toString().toLowerCase(Locale.FRANCE)
+                    )
                 }.toMutableList()
+                checkSort()
                 setSnacksRecycler()
             } else {
                 val size = snacksList.size
@@ -105,9 +120,108 @@ class HomeFragment : Fragment(), IHomeFragment {
                 snack_recycler.adapter?.notifyItemRangeRemoved(0, size)
 
                 snacksList.addAll(originalSnacksList)
+                checkSort()
                 setSnacksRecycler()
             }
         }
+    }
+
+    private fun setHomeSortListener() {
+        val bundlesSortType =
+            arrayOf(
+                "Africa",
+                "Asia",
+                "Australia",
+                "Europe",
+                "North America",
+                "South America"
+            )
+        val bundlesSortTypeBoolean =
+            booleanArrayOf(
+                fromAfrica,
+                fromAsia,
+                fromAustralia,
+                fromEurope,
+                fromNorthAmerica,
+                fromSouthAmerica
+            )
+        home_iv_sort?.setOnClickListener {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.sort)
+                .setMultiChoiceItems(
+                    bundlesSortType,
+                    bundlesSortTypeBoolean
+                ) { dialog, which, checked ->
+                    when (which) {
+                        0 -> fromAfrica = checked
+                        1 -> fromAsia = checked
+                        2 -> fromAustralia = checked
+                        3 -> fromEurope = checked
+                        4 -> fromNorthAmerica = checked
+                        5 -> fromSouthAmerica = checked
+                    }
+                }
+                .setPositiveButton(resources.getString(R.string.ok)) { dialog, which ->
+                    checkSort()
+                    setSnacksRecycler()
+                }
+                .setNeutralButton(resources.getString(R.string.cancel)) { dialog, which ->
+                    // Respond to neutral button press
+                }
+                .show()
+        }
+    }
+
+    private fun checkSort() {
+        if (!fromAfrica && !fromAsia && !fromAustralia && !fromEurope && !fromNorthAmerica && !fromSouthAmerica) {
+            if (home_et_search.text.isNotEmpty()) {
+                sortedSnacksList = originalSnacksList.filter {
+                    it.SEARCH_KEYWORDS!!.contains(
+                        home_et_search.text.toString().toLowerCase(Locale.FRANCE)
+                    )
+                }.toMutableList()
+            } else {
+                sortedSnacksList.addAll(originalSnacksList)
+            }
+        } else {
+            if (fromAfrica) {
+                sortedSnacksList = snacksList.filter {
+                    it.LOCATION!!["AFRICA"]!!
+                }.toMutableList()
+            }
+            if (fromAsia) {
+                sortedSnacksList = snacksList.filter {
+                    it.LOCATION!!["ASIA"]!!
+                }.toMutableList()
+            }
+            if (fromAustralia) {
+                sortedSnacksList = snacksList.filter {
+                    it.LOCATION!!["AUSTRALIA"]!!
+                }.toMutableList()
+            }
+            if (fromEurope) {
+                sortedSnacksList = snacksList.filter {
+                    it.LOCATION!!["EUROPE"]!!
+                }.toMutableList()
+            }
+            if (fromNorthAmerica) {
+                sortedSnacksList = snacksList.filter {
+                    it.LOCATION!!["NORTH_AMERICA"]!!
+                }.toMutableList()
+            }
+            if (fromSouthAmerica) {
+                sortedSnacksList = snacksList.filter {
+                    it.LOCATION!!["SOUTH_AMERICA"]!!
+                }.toMutableList()
+            }
+        }
+
+        val size = snacksList.size
+        snacksList.clear()
+        snack_recycler.adapter?.notifyItemRangeRemoved(0, size)
+
+        snacksList.addAll(sortedSnacksList)
+        sortedSnacksList.clear()
     }
 
     override fun onAttach(context: Context) {
@@ -120,6 +234,7 @@ class HomeFragment : Fragment(), IHomeFragment {
         super.onPause()
         originalSnacksList.clear()
         snacksList.clear()
+        sortedSnacksList.clear()
         home_et_search.text.clear()
     }
 

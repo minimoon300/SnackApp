@@ -91,7 +91,7 @@
             app:layout_constraintTop_toBottomOf="@id/snack_search_view"
             tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             tools:listitem="@layout/view_snack"
-            tools:spanCount="2" />
+            tools:spanCount="3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

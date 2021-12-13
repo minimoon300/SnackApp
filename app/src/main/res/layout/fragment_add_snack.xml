@@ -88,14 +88,14 @@
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_app_bar">
+            app:layout_constraintTop_toBottomOf="@+id/add_app_bar"
+            app:suffixText="g">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/add_et_snack_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,14 +111,14 @@
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_app_bar">
+            app:layout_constraintTop_toBottomOf="@+id/add_app_bar"
+            app:suffixText="for 100g">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/add_et_snack_cals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,14 +132,14 @@
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_app_bar">
+            app:layout_constraintTop_toBottomOf="@+id/add_app_bar"
+            app:suffixText="for 100g">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/add_et_snack_joules"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -226,8 +226,7 @@
                 android:id="@+id/add_et_ingredient_salt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -247,8 +246,7 @@
                 android:id="@+id/add_et_ingredient_sugar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -268,8 +266,7 @@
                 android:id="@+id/add_et_ingredient_water"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -289,8 +286,7 @@
                 android:id="@+id/add_et_ingredient_oil_and_fat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -310,8 +306,7 @@
                 android:id="@+id/add_et_ingredient_flavouring"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -331,8 +326,7 @@
                 android:id="@+id/add_et_ingredient_dairy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -352,8 +346,7 @@
                 android:id="@+id/add_et_ingredient_vegetable_oil_and_fat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -373,8 +366,7 @@
                 android:id="@+id/add_et_ingredient_cereal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -394,8 +386,7 @@
                 android:id="@+id/add_et_ingredient_vegetable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -415,8 +406,7 @@
                 android:id="@+id/add_et_ingredient_fruit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -436,8 +426,7 @@
                 android:id="@+id/add_et_ingredient_flour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -457,8 +446,7 @@
                 android:id="@+id/add_et_ingredient_wheat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -478,8 +466,7 @@
                 android:id="@+id/add_et_ingredient_root_vegetable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -499,8 +486,7 @@
                 android:id="@+id/add_et_ingredient_vegetable_oil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -520,8 +506,7 @@
                 android:id="@+id/add_et_ingredient_glucose"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -541,8 +526,7 @@
                 android:id="@+id/add_et_ingredient_starch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -562,8 +546,7 @@
                 android:id="@+id/add_et_ingredient_milk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -583,8 +566,7 @@
                 android:id="@+id/add_et_ingredient_natural_flavouring"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -604,8 +586,7 @@
                 android:id="@+id/add_et_ingredient_cereal_flour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -625,8 +606,7 @@
                 android:id="@+id/add_et_ingredient_spice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
