@@ -117,68 +117,26 @@ class AddSnackFragment : Fragment() {
     private fun getSnackIngredients(): HashMap<String, Int> {
         val ingredients = HashMap<String, Int>()
 
-        when {
-            add_et_ingredient_salt.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["SALT"] =
-                add_et_ingredient_salt.text.toString().toInt()
-            add_et_ingredient_sugar.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["SUGAR"] =
-                add_et_ingredient_sugar.text.toString().toInt()
-            add_et_ingredient_water.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["WATER"] =
-                add_et_ingredient_water.text.toString().toInt()
-            add_et_ingredient_oil_and_fat.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["OIL AND FAT"] =
-                add_et_ingredient_oil_and_fat.text.toString().toInt()
-            add_et_ingredient_flavouring.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["FLAVOURING"] =
-                add_et_ingredient_flavouring.text.toString().toInt()
-            add_et_ingredient_dairy.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["DAIRY"] =
-                add_et_ingredient_dairy.text.toString().toInt()
-            add_et_ingredient_vegetable_oil_and_fat.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["VEGETABLE OIL AND FAT"] =
-                add_et_ingredient_vegetable_oil_and_fat.text.toString().toInt()
-            add_et_ingredient_cereal.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["CEREAL"] =
-                add_et_ingredient_cereal.text.toString().toInt()
-            add_et_ingredient_vegetable.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["VEGETABLE"] =
-                add_et_ingredient_vegetable.text.toString().toInt()
-            add_et_ingredient_fruit.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["FRUIT"] =
-                add_et_ingredient_fruit.text.toString().toInt()
-            add_et_ingredient_flour.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["FLOUR"] =
-                add_et_ingredient_flour.text.toString().toInt()
-            add_et_ingredient_wheat.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["WHEAT"] =
-                add_et_ingredient_wheat.text.toString().toInt()
-            add_et_ingredient_root_vegetable.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["ROOT VEGETABLE"] =
-                add_et_ingredient_root_vegetable.text.toString().toInt()
-            add_et_ingredient_vegetable_oil.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["VEGETABLE OIL"] =
-                add_et_ingredient_vegetable_oil.text.toString().toInt()
-            add_et_ingredient_glucose.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["GLUCOSE"] =
-                add_et_ingredient_glucose.text.toString().toInt()
-            add_et_ingredient_starch.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["STARCH"] =
-                add_et_ingredient_starch.text.toString().toInt()
-            add_et_ingredient_milk.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["MILK"] =
-                add_et_ingredient_milk.text.toString().toInt()
-            add_et_ingredient_natural_flavouring.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["NATURAL FLAVOURING"] =
-                add_et_ingredient_natural_flavouring.text.toString().toInt()
-            add_et_ingredient_cereal_flour.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["CEREAL FLOUR"] =
-                add_et_ingredient_cereal_flour.text.toString().toInt()
-            add_et_ingredient_spice.text.toString().trim()
-                .ifEmpty { "0" } != "0" -> ingredients["SPICE"] =
-                add_et_ingredient_spice.text.toString().toInt()
-        }
+        ingredients["SALT"] = add_et_ingredient_salt.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["SUGAR"] = add_et_ingredient_sugar.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["WATER"] = add_et_ingredient_water.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["OIL AND FAT"] = add_et_ingredient_oil_and_fat.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["FLAVOURING"] = add_et_ingredient_flavouring.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["DAIRY"] = add_et_ingredient_dairy.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["VEGETABLE OIL AND FAT"] = add_et_ingredient_vegetable_oil_and_fat.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["CEREAL"] = add_et_ingredient_cereal.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["VEGETABLE"] = add_et_ingredient_vegetable.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["FRUIT"] = add_et_ingredient_fruit.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["FLOUR"] = add_et_ingredient_flour.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["WHEAT"] = add_et_ingredient_wheat.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["ROOT VEGETABLE"] = add_et_ingredient_root_vegetable.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["VEGETABLE OIL"] = add_et_ingredient_vegetable_oil.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["GLUCOSE"] = add_et_ingredient_glucose.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["STARCH"] = add_et_ingredient_starch.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["MILK"] = add_et_ingredient_milk.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["NATURAL FLAVOURING"] = add_et_ingredient_natural_flavouring.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["CEREAL FLOUR"] = add_et_ingredient_cereal_flour.text.toString().trim().ifEmpty { "0" }.toInt()
+        ingredients["SPICE"] = add_et_ingredient_spice.text.toString().trim().ifEmpty { "0" }.toInt()
 
         return ingredients
     }
