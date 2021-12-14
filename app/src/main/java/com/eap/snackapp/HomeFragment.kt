@@ -60,6 +60,7 @@ class HomeFragment : Fragment(), IHomeFragment {
         super.onViewCreated(view, savedInstanceState)
 
         currentSnack = null
+        var userList = mutableListOf<User>()
         Firebase.firestore.collection("users_db").document(Firebase.auth.currentUser!!.uid).get()
             .addOnSuccessListener {
                 username = it["NAME"] as String
@@ -69,11 +70,16 @@ class HomeFragment : Fragment(), IHomeFragment {
                     .addOnSuccessListener { snacksQuery ->
                         for (document in snacksQuery.documents)
                             originalSnacksList.add(document.toObject(Snack::class.java)!!)
-                        snacksList.addAll(originalSnacksList)
+                        Firebase.firestore.collection("users_db")
+                            .get().addOnSuccessListener { result ->
+                                for (document in result.documents) {
+                                    userList.add(document.toObject(User::class.java)!!)
+                                }
+                        snacksList.addAll(ContentBasedAlgorithm.sortList(ContentBasedAlgorithm.content_based_algorithm_hub(originalSnacksList), CollaborativeFilteringAlgorithm.Simple.main(originalSnacksList, userList)))
                         setSnacksRecycler()
                         setSearch()
                         setHomeSortListener()
-                    }
+                    }}
                 dismissLoadingDialog()
             }
     }
